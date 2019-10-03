@@ -29,7 +29,7 @@ namespace Pokesharp
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
 
-            // MusicPlayer.playMusic("start-theme");
+            MusicPlayer.playMusic("start-theme");
         }
 
         private bool isFieldsFilled() {

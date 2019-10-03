@@ -57,6 +57,20 @@ namespace Pokesharp.Data
             }
         }
 
+        public static PokedexPokemon DisablePokemon(PokedexPokemon pokedexPokemon)
+        {
+            using (Context db = new Context())
+            {
+                pokedexPokemon.Enabled = false;
+
+                db.PokedexPokemon.Attach(pokedexPokemon);
+                db.Entry(pokedexPokemon).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return pokedexPokemon;
+            }
+        }
+
     }
 
 }

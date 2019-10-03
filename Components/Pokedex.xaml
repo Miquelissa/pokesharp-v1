@@ -70,16 +70,18 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridCheckBoxColumn Binding="{Binding Catched}">
-                    <DataGridCheckBoxColumn.Header>
-                        <TextBlock TextWrapping="Wrap" Text="Catched"></TextBlock>
-                    </DataGridCheckBoxColumn.Header>
-                </DataGridCheckBoxColumn>
                 <DataGridCheckBoxColumn Binding="{Binding IsMain}">
                     <DataGridCheckBoxColumn.Header>
                         <TextBlock TextWrapping="Wrap" Text="Main"></TextBlock>
                     </DataGridCheckBoxColumn.Header>
                 </DataGridCheckBoxColumn>
+                <DataGridTemplateColumn Width="85">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ButtonRow_Click" Content="Kill" Height="20" Width="82"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

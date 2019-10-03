@@ -33,12 +33,15 @@ namespace Pokesharp.Data
 
                 password = Util.Encryptor.MD5(password);
 
-                return db.Player
+                Player player = db.Player
                     .Include("Pokedex")
                     .Include("Pokedex.Pokemons")
                     .Include("Pokedex.Pokemons.Pokemon")
-                    .Where(player => player.Enabled)
-                    .FirstOrDefault(player => player.Username.Equals(username) && player.Password.Equals(password));
+                    .Where(_player => _player.Enabled)
+                    .FirstOrDefault(_player => _player.Username.Equals(username) && _player.Password.Equals(password));
+
+                player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
+                return player;
 
             }
 
@@ -48,13 +51,16 @@ namespace Pokesharp.Data
 
             using (Context db = new Context()) {
 
-                return db.Player
+                Player player = db.Player
                     .Include("Pokedex")
                     .Include("Pokedex.Pokemons")
                     .Include("Pokedex.Pokemons.Pokemon")
-                    .Where(player => player.Enabled)
-                    .FirstOrDefault(player => player.ID == id);
+                    .Where(_player => _player.Enabled)
+                    .FirstOrDefault(_player => _player.ID == id);
 
+                // filter enabled player pokemons
+                player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
+                return player;
             }
 
         }

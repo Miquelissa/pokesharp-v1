@@ -71,5 +71,23 @@ namespace Pokesharp.Components
                 RefreshData();
             }
         }
+
+        private void ButtonRow_Click(object sender, RoutedEventArgs e)  {
+            PokedexPokemon pokedexPokemon = ((PokedexPokemonData)((Button)e.Source).DataContext).PokedexPokemon;
+            
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure you want to kill " + pokedexPokemon.Pokemon.Name + " (lvl. " + pokedexPokemon.Level + ")?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                Pokedexes.DisablePokemon(pokedexPokemon);
+                Session.UpdatePlayer();
+
+                RefreshData();
+            }
+        } 
+
+        private void DataGridPokedex_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
