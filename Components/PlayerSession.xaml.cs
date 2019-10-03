@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Pokesharp.Models;
 
 namespace Pokesharp.Components
 {
@@ -40,6 +41,12 @@ namespace Pokesharp.Components
 
             Login login = new Login();
             login.Show();
+        }
+
+        private void openPerfil(object sender, RoutedEventArgs e)
+        {
+            EditClient editClient = new EditClient(Session.Player);
+            editClient.Show();
         }
     }
 }

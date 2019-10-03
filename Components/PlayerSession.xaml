@@ -8,5 +8,6 @@
     <Grid>
         <Button x:Name="ButtonLeave" Content="Leave" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="121,43,0,0" Click="ButtonLeave_Click" />
         <Label x:Name="LabelWelcomeUser" Content="Welcome user!" Width="193" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="10,14,0,0" Loaded="LabelWelcomeUser_Loaded"/>
+        <Button Click="openPerfil" Content="Perfil" HorizontalAlignment="Left" Margin="25,43,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

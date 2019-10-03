@@ -77,6 +77,9 @@
       <DependentUpon>Pokedex.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Regions.cs" />
+    <Compile Include="EditClient.xaml.cs">
+      <DependentUpon>EditClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Encounter.xaml.cs">
       <DependentUpon>Encounter.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\Pokedex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -27,6 +27,7 @@ namespace Pokesharp.State {
             User = Players.FindOneByID(Player.ID);
         }
 
+
         public static Player Player {
 
             get {
