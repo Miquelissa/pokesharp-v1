@@ -55,7 +55,7 @@ namespace Pokesharp
                 Player player = Players.FindOneByLogin(username, password);
 
                 if (player == null) {
-                    MessageBox.Show("Player not found, please verify your username and password", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Password or player incorrect, please try again.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
@@ -65,7 +65,7 @@ namespace Pokesharp
 
                 world.Show();
                 Close();
-
+                
             } catch {
                 MessageBox.Show("An error has occurred, please try again later.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

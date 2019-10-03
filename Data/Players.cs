@@ -40,9 +40,12 @@ namespace Pokesharp.Data
                     .Where(_player => _player.Enabled)
                     .FirstOrDefault(_player => _player.Username.Equals(username) && _player.Password.Equals(password));
 
-                player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
-                return player;
+                if(player != null)
+                {
+                    player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
+                }
 
+                return player;
             }
 
         }
@@ -58,8 +61,12 @@ namespace Pokesharp.Data
                     .Where(_player => _player.Enabled)
                     .FirstOrDefault(_player => _player.ID == id);
 
-                // filter enabled player pokemons
-                player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
+                if (player != null)
+                {
+                    // filter enabled player pokemons
+                    player.Pokedex.Pokemons = player.Pokedex.Pokemons.Where(pokemon => pokemon.Enabled).ToList();
+                }
+
                 return player;
             }
 
