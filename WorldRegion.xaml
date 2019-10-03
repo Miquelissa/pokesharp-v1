@@ -1,0 +1,59 @@
+﻿<Window x:Class="Pokesharp.WorldRegion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokesharp"
+        xmlns:custom="clr-namespace:Pokesharp.Components"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="WorldRegion" Height="705.5" Width="1171.81" ResizeMode="NoResize">
+    <Grid ClipToBounds="True">
+        <Image HorizontalAlignment="Left" Height="231" Margin="10,16,0,0" VerticalAlignment="Top" Width="231" Source="Resources/Images/pokemon_logo.png"/>
+        <custom:PlayerSession Margin="929,11,17,584"></custom:PlayerSession>
+        <custom:Pokedex x:Name="DataGridPokedex" Margin="475,168,0,80" BorderThickness="2" HorizontalAlignment="Left" Width="656"/>
+        <Label x:Name="LabelPokedex" Content="Pokedex" HorizontalAlignment="Left" Margin="473,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.684,1.923" FontSize="24" FontFamily="Courier New" FontWeight="Bold"/>
+        <Label x:Name="LabelLocals" Content="Locals" HorizontalAlignment="Left" Margin="20,122,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.684,1.923" FontSize="24" FontFamily="Courier New" FontWeight="Bold"/>
+        <DataGrid x:Name="DataGridLocals" CanUserResizeColumns="False" CanUserResizeRows="False" AutoGenerateColumns="False" IsReadOnly="True" Margin="24,168,712,80" Loaded="DataGridLocals_Loaded">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}" Stretch="UniformToFill" MaxWidth="50" MaxHeight="50"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock TextWrapping="Wrap" Text="Name"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock TextWrapping="Wrap" Text="Pokémon Count"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PokemonCount}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ButtonRow_Click" Content="Search" Height="20"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ButtonBackToWorld" Content="Back to World" HorizontalAlignment="Left" Margin="341,132,0,0" VerticalAlignment="Top" Width="103" Click="ButtonBackToWorld_Click"/>
+        <Image x:Name="ImageGifLoading" HorizontalAlignment="Left" Height="70" Margin="172,334,0,0" VerticalAlignment="Top" Width="126" gif:ImageBehavior.AnimatedSource="Resources/Images/loading.gif" Source="Resources/Images/loading.gif"/>
+        <Label x:Name="LabelLoading" Content="Searching..." HorizontalAlignment="Left" Margin="145,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.605,-0.385" FontSize="24" FontFamily="Courier New"/>
+    </Grid>
+</Window>

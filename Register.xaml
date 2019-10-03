@@ -1,0 +1,20 @@
+﻿<Window x:Class="Pokesharp.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokesharp"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="370.611" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="168" Margin="80,0,0,0" VerticalAlignment="Top" Width="170" Source="Resources/Images/register_pokemon_sprite.gif"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="90,166,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="92,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Name="TextBoxUsername"/>
+        <Label Content="Secret" HorizontalAlignment="Left" Margin="88,218,0,0" VerticalAlignment="Top" Width="66"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="92,244,0,0" VerticalAlignment="Top" Width="158" Height="20" Name="PasswordBoxPassword"/>
+        <Label Content="Repeat Secret" HorizontalAlignment="Left" Margin="88,272,0,0" VerticalAlignment="Top" Width="102"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="92,300,0,0" VerticalAlignment="Top" Width="158" Height="20" Name="PasswordBoxRepeatPassword"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="108,338,0,0" VerticalAlignment="Top" Width="76" Name="ButtonRegister" Click="ButtonRegister_Click"/>
+        <Label Content="or back" HorizontalAlignment="Left" Margin="188,334,0,0" VerticalAlignment="Top" Cursor="Hand" Name="LabelBackClick" MouseLeftButtonUp="LabelBackClick_MouseLeftButtonUp"/>
+    </Grid>
+</Window>

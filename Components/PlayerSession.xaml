@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Pokesharp.Components.PlayerSession"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pokesharp.Components"
+             mc:Ignorable="d" Height="81.667" Width="220">
+    <Grid>
+        <Button x:Name="ButtonLeave" Content="Leave" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Margin="121,43,0,0" Click="ButtonLeave_Click" />
+        <Label x:Name="LabelWelcomeUser" Content="Welcome user!" Width="193" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="10,14,0,0" Loaded="LabelWelcomeUser_Loaded"/>
+    </Grid>
+</UserControl>
